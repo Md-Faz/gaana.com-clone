@@ -1,0 +1,410 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: proximanova-regular-webfont, Arial, sans-serif;
+    font-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* HEADER DESIGNING*/
+.header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding: 10px;
+    background-color: #f5f5f5;
+    z-index: 1000;
+    
+}
+
+.header-left {
+    padding-left: 50px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.header-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.search {
+    color: #8a898e;
+    padding: 3px;
+    padding-left: 5px;
+    gap: 5px;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.search-input {
+    font-size: 12px;
+    width: 110%;
+    border: none;
+}
+
+.header-btn {
+    font-size: 12px;
+    border-radius: 20px;
+    border: 1px solid red;
+    color: red;
+    padding: 2px 25px;
+}
+
+.login-btn {
+    font-size: 12px;
+    color: #8a898e;
+    border: none;
+    background-color: transparent;
+}
+
+.night-btn {
+    color: #8a898e;
+    margin-top: 5px;
+}
+
+.logo {
+    margin-top: 5px;
+    padding-left: 5px;
+}
+/* HEADER DESIGNING END*/
+
+
+/* NAVBAR SECTION BEGINS */
+.navbar a {
+    text-decoration: none;
+    color: #8a898e;
+    margin: 18px;
+    cursor: pointer;
+    letter-spacing: -.20px;
+    text-transform: capitalize;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    top: 60px;
+    display: flex;
+    font-size: 16px;
+    padding-left: 18px;
+    z-index: 1000;
+}
+
+.navbar a:hover {
+    border-bottom: solid 2px red;
+
+}
+
+
+/* NAVBAR SECTION ENDS*/
+
+
+/*SLIDER SECTION BEGINS*/
+
+.slider-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    margin-left: 600px;
+    height: 400px;
+    width: 750px;
+}
+
+.swiper{
+    height: fit-content;
+    background-size: contain;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: white;
+    margin: 5px 35px 5px 20px;
+}
+
+/*SLIDER SECTION ENDS*/
+
+
+/*ALBUMS DISPLAY SECTION BEGINS*/
+.albums-container {
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.album-top-container{
+    margin-top: 50px;
+}
+
+.album {
+    position: relative;
+    margin-right: 45px;
+}
+
+h2 {
+    margin-left: 50px;
+    font-weight: 550;
+}
+
+.album-section {
+    margin-top: 30px;
+    padding: 10px 0px;
+}
+
+.play-btn {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.album .play-btn {
+    height: 60px;
+    width: 60px;
+}
+
+.album img {
+    border-radius: 7px;
+    height: 160px;
+    width: 160px;
+}
+
+.album h4 {
+    margin-top: -0.9px;
+}
+
+.album:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.album:hover .play-btn {
+    opacity: 80%;
+    filter: brightness(0.85);
+    cursor: pointer;
+    visibility: visible;
+}
+/*ALBUMS DISPLAY SECTION ENDS*/
+
+
+
+/*MUSIC PLAYER SECTION STARTS*/
+.music-player{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100vw;
+    padding: 10px 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.5);
+}
+
+
+.music-icon img{
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    border-radius: 7px;
+
+}
+
+.current-music-playing{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+margin: 0px 25px;
+gap: 20px;
+width: 21%;
+}
+
+
+.fav-dot-icons{
+    cursor: pointer;
+    padding-left: 80px;
+}
+
+.time{
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 4px 7px;
+    font-size: 12px;
+}
+
+.music-controls{
+    cursor: pointer;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.red-play-btn{
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+/*pause btn is here*/
+
+.red-pause-btn{
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: none;
+}
+
+.music-quality{
+    cursor: pointer;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-right: 100px;
+}
+
+.music-controls .reverse{
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/*MUSIC PLAYER SECTION ENDS*/
+
+
+
+/*FOOTER SECTION STARTS*/
+
+.footer-para {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-logo img {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-container p {
+    cursor: pointer;
+    align-items: center;
+    margin: 0px 300px;
+    text-align-last: center;
+    color: #8e8e93;
+    font-size: 12px;
+}
+
+.footer-links {
+    cursor: pointer;
+    font-size: 12px;
+    color: #8e8e93;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+footer h4 {
+    text-align: center;
+}
+
+.footer-copyright {
+    margin-bottom: 100px;
+    text-align: center;
+    color: #8e8e93;
+    font-size: 12px;
+}
+
+.footer-list-black {
+    color: black;
+}
+
+/*FOOTER SECTION ENDS*/
+
+/*MEDIA QUERY SECTION STARTS*/
+
+@media (min-width: 1024px){
+    .slider-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15vh;
+        margin-left: 350px;
+        height: 300px;
+        width: 550px;
+    }
+    
+    .swiper-button-prev, .swiper-button-next{
+        color: white;
+        margin: 10px 35px 10px 20px;
+    }
+
+    .music-player{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 55px;
+        width: 100vw;
+        padding: 15px 15px;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        box-shadow: 0 0 4px 0 rgba(0,0,0,.5);
+    }
+    .fav-dot-icons{
+        cursor: pointer;
+        padding-left: 50px;
+    }
+}
+
+
+
+
+/*MEDIA QUERY SECTION ENDS*/
