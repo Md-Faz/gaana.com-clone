@@ -14,43 +14,43 @@ const swiper = new Swiper('.swiper', {
 
 });
 
-
-//FIRST MAKE ALL SONG NAMES AND IMAGE NAMES SAME 
-//THEN ADD EVENT LISTENER TO THE ALBUM CLICKED AND GET THE INNER HTML OR THE NAME OF THE SONG
-//WITH THE NAME OF THE SONG FIRST UPDATE THE IMAGE AND DURATION OF SONG IN THE PLAYER
-//THEN WITH THE NAME OF THE SONG PLAY THE SONG 
-//ADD THE PLAY PAUSE FUNCTIONS ON CLICK OF THE PLAY PAUSE BTN IN PLAYER
-
-
-// for (var i = 0; i < 27; i++) {
-//   document.querySelectorAll(".album")[i].addEventListener("click", function () {
-//     var selectedSong = document.querySelector("div.album > h4").innerHTML;
-//   })
-// }
-
-// for (var i = 0; i < 27; i++) {
-//   document.querySelectorAll(".album")[i].addEventListener("click", function () {
-   
-//     let songName = this.querySelector("div.album > h4").innerText;
-//     let playThisSong = "assets/songs/" + songName + ".mp3";
-//     var playSong = new Audio(playThisSong);
-//     playSong.play();
-
-//   })
-// }
-
-
-
-// var playSong = new Audio("assets/songs/Dooriyan.mp3");
-// playSong.play();
-
-
+// PLAY MUSIC OF CLICKED ALBUM
 for (var i = 0; i < 27; i++) {
   document.querySelectorAll(".album")[i].addEventListener("click", function () {
+
+    //getting innner text of clicked album
     let songName = this.querySelector("div.album > h4").innerText;
+
+    //playing song of the album clicked
     let playThisSong = "assets/songs/" + songName + ".mp3";
-    var playSong = new Audio(playThisSong);
+    let playSong = new Audio(playThisSong);
     playSong.play();
-  })
+
+    //selecting the music player name and image and replacing with the selected album name and img
+    let musicPlayerText1 = document.querySelector(".music-name strong");
+    let musicPlayerText2 = document.querySelector(".music-name small");
+    musicPlayerText1.innerHTML = songName;
+    musicPlayerText2.innerHTML = songName;
+    let changeImg = "assets/images/" + songName + ".jpg";
+    document.querySelector(".music-icon img").src = changeImg;
+
+    //hiding the play btn and showing the pause btn
+    document.querySelector(".red-play-btn").style.display = "none"
+    document.querySelector(".red-pause-btn").style.display = "block"
+
+    //adding the play and pause audio function on click of play and pause btn
+    document.querySelector(".red-pause-btn").addEventListener("click", function pauseAudio() {
+      playSong.pause();
+      document.querySelector(".red-pause-btn").style.display = "none"
+      document.querySelector(".red-play-btn").style.display = "block"
+    })
+    document.querySelector(".red-play-btn").addEventListener("click", function playAudio() {
+      playSong.play();
+      document.querySelector(".red-play-btn").style.display = "none"
+      document.querySelector(".red-pause-btn").style.display = "block"
+    })
+
+    //pause previous audio and play the clicked album audio
+  });
 }
 
