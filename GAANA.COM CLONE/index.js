@@ -1,5 +1,5 @@
 // SLIDER JS ANIMATIONS
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   autoplay: {
     delay: 2000,
     disableOnInteraction: false,
@@ -8,12 +8,13 @@ const swiper = new Swiper('.swiper', {
   loop: true,
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-
 });
 
+
+let lastPlayedSong = null;
 // PLAY MUSIC OF CLICKED ALBUM
 for (var i = 0; i < 27; i++) {
   document.querySelectorAll(".album")[i].addEventListener("click", function () {
@@ -51,6 +52,8 @@ for (var i = 0; i < 27; i++) {
     })
 
     //pause previous audio and play the clicked album audio
+    if (lastPlayedSong) lastPlayedSong.pause();
+    lastPlayedSong = playSong;
   });
 }
 
